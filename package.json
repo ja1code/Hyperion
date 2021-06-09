@@ -1,0 +1,61 @@
+{
+	"name": "hyperion",
+	"displayName": "Hyperion",
+	"description": "A postman/insomnia like HTTP client for VSCode",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "hyperion-sidebarview",
+					"title": "Hyperion",
+					"icon": "array"
+				}
+			]
+		},
+		"views": {
+			"hyperion-sidebarview": [
+				{
+					"type": "webview",
+					"id": "hyperion-sidebar",
+					"name": "Hyperion",
+					"icon": "array",
+					"contextualTitle": "Hyperion"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "hyperion.health-check",
+				"category": "Hyperion",
+				"title": "HC"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.56.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+}
